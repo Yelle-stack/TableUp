@@ -1,59 +1,62 @@
 # 🍽️ TableUp
 
-**TableUp** est une application web de réservation de restaurants permettant aux utilisateurs de découvrir des restaurants, rechercher des établissements, consulter leurs informations et effectuer une réservation en ligne.
+**TableUp** is a modern restaurant discovery and table booking web application built with React and TypeScript.
 
-L'application propose également des espaces dédiés aux **propriétaires de restaurants** et aux **administrateurs** afin de gérer les établissements, les réservations et les demandes d'approbation.
+The application allows users to discover restaurants, search by cuisine, view restaurant details, read reviews, and book a table online.
 
----
-
-## ✨ Fonctionnalités
-
-### 👤 Utilisateur
-
-* 🏠 Page d'accueil moderne et responsive
-* 🔎 Recherche de restaurants
-* 🍴 Navigation par type de cuisine
-* 📈 Restaurants tendance
-* 🏆 Section membres / avantages
-* 📋 Consultation des détails d'un restaurant
-* ⭐ Consultation des avis
-* 📅 Réservation d'une table
-* ✅ Confirmation de réservation
-* 🔐 Authentification utilisateur
-* 🛡️ Protection des routes privées
-
-### 🏪 Propriétaire de restaurant
-
-* 📊 Tableau de bord propriétaire
-* ➕ Création d'un restaurant
-* 🧙‍♂️ Assistant de création de restaurant (`RestaurantWizard`)
-* 👤 Gestion du profil du restaurant
-* 📅 Gestion des réservations
-* ⏳ Suivi du statut d'approbation
-* ❌ Gestion des demandes rejetées
-
-### 👨‍💼 Administrateur
-
-* 📊 Tableau de bord administrateur
-* 📈 Statistiques
-* ✅ Validation des restaurants
-* ❌ Rejet des demandes
-* 🔎 Gestion des demandes d'approbation
+TableUp also includes dedicated dashboards for **restaurant owners** and **administrators**, providing tools to manage restaurants, bookings, and approval requests.
 
 ---
 
-## 🛠️ Technologies utilisées
+## ✨ Features
+
+### 👤 User Features
+
+* 🏠 Modern and responsive homepage
+* 🔎 Restaurant search
+* 🍴 Browse restaurants by cuisine
+* 📈 Trending restaurants
+* 🏆 Membership section
+* 📋 View detailed restaurant information
+* ⭐ Read restaurant reviews
+* 📅 Book a table
+* ✅ Booking confirmation
+* 🔐 User authentication
+* 🛡️ Protected routes
+
+### 🏪 Restaurant Owner Features
+
+* 📊 Dedicated owner dashboard
+* ➕ Create a restaurant
+* 🧙 Restaurant creation wizard
+* 👤 Manage restaurant profile
+* 📅 Manage bookings
+* ⏳ Track restaurant approval status
+* ❌ Handle rejected requests
+
+### 👨‍💼 Admin Features
+
+* 📊 Admin dashboard
+* 📈 Platform statistics
+* ✅ Approve restaurant requests
+* ❌ Reject restaurant requests
+* 🔎 Manage restaurant approval requests
+
+---
+
+## 🛠️ Technologies
 
 * **React**
 * **TypeScript**
 * **Vite**
 * **CSS**
 * **React Context API**
-* **Git & GitHub**
+* **Git**
+* **GitHub**
 
 ---
 
-## 📁 Structure du projet
+## 📁 Project Structure
 
 ```text
 TableUp/
@@ -127,37 +130,33 @@ TableUp/
 
 ---
 
-## 🚀 Installation
+## 🚀 Getting Started
 
-Clone the repository :
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Yelle-stack/TableUp.git
 ```
 
-Accéder au projet :
+### 2. Navigate to the project
 
 ```bash
 cd TableUp
 ```
 
-Installer les dépendances :
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
 
----
-
-## 💻 Lancer le projet en développement
-
-Démarrer le serveur de développement :
+### 4. Start the development server
 
 ```bash
 npm run dev
 ```
 
-L'application sera ensuite accessible depuis l'adresse indiquée par Vite, généralement :
+The application will be available at the local URL provided by Vite, usually:
 
 ```text
 http://localhost:5173
@@ -165,15 +164,15 @@ http://localhost:5173
 
 ---
 
-## 🏗️ Build
+## 🏗️ Build for Production
 
-Pour créer une version de production :
+To create a production build:
 
 ```bash
 npm run build
 ```
 
-Pour prévisualiser le build :
+To preview the production build locally:
 
 ```bash
 npm run preview
@@ -181,29 +180,27 @@ npm run preview
 
 ---
 
-## 🧩 Architecture
+## 🧩 Application Architecture
 
-TableUp utilise une architecture basée sur des **composants React réutilisables**.
+TableUp follows a component-based React architecture designed to keep the application modular and maintainable.
 
 ### Components
 
-Les composants sont organisés par fonctionnalité :
+Components are organized according to their main functionality:
 
-* `home/` → composants de la page d'accueil
-* `restaurant/` → composants liés aux restaurants
-* `booking/` → composants liés aux réservations
-* `owner/` → fonctionnalités des propriétaires
-* `admin/` → fonctionnalités administratives
-
-Cette organisation permet de maintenir une structure claire et facilement évolutive.
+* `home/` — Homepage components
+* `restaurant/` — Restaurant-related components
+* `booking/` — Booking-related components
+* `owner/` — Restaurant owner features
+* `admin/` — Administration features
 
 ### Context
 
-`AppContext.tsx` centralise l'état global de l'application et permet aux différents composants d'accéder aux données partagées.
+The `AppContext.tsx` file provides global application state and allows different components to share data and application logic.
 
 ### Pages
 
-Le dossier `pages/` contient les différentes vues principales de l'application :
+The `pages/` directory contains the main application views:
 
 * Home
 * Search
@@ -215,83 +212,102 @@ Le dossier `pages/` contient les différentes vues principales de l'application 
 
 ---
 
-## 🔐 Gestion des accès
+## 🔐 User Roles & Access
 
-TableUp distingue plusieurs types d'utilisateurs :
+TableUp supports different types of users:
 
 ```text
-Utilisateur
-    │
-    ├── Client
-    │
-    ├── Propriétaire
-    │
-    └── Administrateur
+                    TableUp
+                       │
+          ┌────────────┼────────────┐
+          │            │            │
+        Client       Owner        Admin
+          │            │            │
+       Booking      Restaurant    Platform
+       & Search     Management    Management
 ```
 
-Les routes nécessitant une authentification sont protégées grâce au composant :
+Protected pages are handled through the reusable:
 
 ```text
 ProtectedRoute.tsx
 ```
 
+component.
+
 ---
 
-## 📅 Parcours de réservation
+## 📅 Booking Flow
 
-Le parcours utilisateur est organisé autour de plusieurs composants :
+The restaurant booking process is divided into several reusable components:
 
 ```text
 Restaurant
-     ↓
+     │
+     ▼
 BookingWidget
-     ↓
+     │
+     ▼
 BookingForm
-     ↓
+     │
+     ▼
 BookingSummary
-     ↓
+     │
+     ▼
 BookingSuccess
-     ↓
+     │
+     ▼
 BookingConfirmation
 ```
 
-L'utilisateur peut ainsi sélectionner les informations nécessaires à sa réservation puis obtenir une confirmation.
+This structure makes the booking process clear and easy to maintain.
 
 ---
 
-## 🏪 Parcours propriétaire
+## 🏪 Restaurant Owner Flow
 
-Un propriétaire peut créer et gérer son restaurant :
+Restaurant owners can create and manage their restaurant through a dedicated workflow:
 
 ```text
 Owner Dashboard
-       ↓
+       │
+       ▼
 Restaurant Wizard
-       ↓
-Demande d'approbation
-       ↓
-Admin Approval
-       ↓
-Restaurant publié
+       │
+       ▼
+Approval Request
+       │
+       ▼
+Admin Review
+       │
+   ┌───┴────┐
+   ▼        ▼
+Approved  Rejected
+   │        │
+   ▼        ▼
+Published  Request
+Restaurant Rejected
 ```
 
-Les demandes peuvent être :
+Restaurant requests can have different statuses:
 
-* ⏳ En attente
-* ✅ Approuvées
-* ❌ Rejetées
+* ⏳ Pending
+* ✅ Approved
+* ❌ Rejected
 
 ---
 
-## 📊 Tableau de bord administrateur
+## 📊 Admin Dashboard
 
-L'administrateur dispose d'un espace permettant notamment de :
+Administrators have access to a dedicated dashboard where they can:
 
-* consulter les demandes de restaurants ;
-* approuver ou rejeter les restaurants ;
-* consulter les statistiques de la plateforme.
+* Review restaurant applications
+* Approve restaurants
+* Reject restaurants
+* View platform statistics
+* Manage approval requests
 
-Les composants principaux sont :
+The main administrative components include:
 
 ```text
 AdminDashboard.tsx
@@ -303,7 +319,7 @@ AdminStats.tsx
 
 ## 📱 Responsive Design
 
-L'interface a été pensée pour fonctionner sur différents formats d'écran :
+TableUp is designed to provide a responsive user experience across different screen sizes:
 
 * 💻 Desktop
 * 📱 Mobile
@@ -311,34 +327,36 @@ L'interface a été pensée pour fonctionner sur différents formats d'écran :
 
 ---
 
-## 🔮 Améliorations futures
+## 🔮 Future Improvements
 
-Plusieurs fonctionnalités pourraient être ajoutées dans les prochaines versions :
+Potential future features include:
 
-* 💳 Paiement en ligne
-* 📧 Notifications par email
-* 🔔 Notifications de réservation
-* 🗺️ Intégration d'une carte interactive
-* ⭐ Système d'avis plus avancé
-* ❤️ Restaurants favoris
-* 📱 Application mobile
-* 🔎 Filtres de recherche avancés
-* 📊 Statistiques plus détaillées pour les propriétaires
-* 🖼️ Gestion avancée des photos des restaurants
+* 💳 Online payment integration
+* 📧 Email notifications
+* 🔔 Booking notifications
+* 🗺️ Interactive maps
+* ❤️ Favorite restaurants
+* 🔎 Advanced search filters
+* ⭐ Enhanced review system
+* 📊 More detailed owner analytics
+* 🖼️ Advanced restaurant image management
+* 📱 Mobile application
 
 ---
 
-## 👩‍💻 Auteur
+## 👩‍💻 Author
 
 **Jelena Zeko**
 
 Front-End Developer
 
-GitHub : **Yelle-stack**
+GitHub: **Yelle-stack**
 
 ---
 
-## 📄 Licence
+## 📄 License
 
-Ce projet a été développé dans le cadre d'un projet personnel / portfolio.
+This project was created as a personal portfolio project.
+
+---
 
