@@ -1,5 +1,7 @@
 # 🍽️ TableUp
 
+![image_alt](https://github.com/Yelle-stack/TableUp/blob/1b868705ba6244ed08d964a092aba56bee767468/TableUpHome.png)
+
 **TableUp** is a modern restaurant discovery and table booking web application built with React and TypeScript.
 
 The application allows users to discover restaurants, search by cuisine, view restaurant details, read reviews, and book a table online.
