@@ -81,12 +81,12 @@ TableUp/
 │   │   │   ├── CuisineBrowse.tsx
 │   │   │   ├── Hero.tsx
 │   │   │   ├── MembershipSection.tsx
-│   │   │   ├── NewletterCTA.tsx
+│   │   │   ├── NewsletterCTA.tsx
 │   │   │   └── TrendingRow.tsx
 │   │   │
 │   │   ├── owner/
 │   │   │   ├── OwnerBooking.tsx
-│   │   │   ├── OwnerProfilDetails.tsx
+│   │   │   ├── OwnerProfileDetails.tsx
 │   │   │   ├── PendingApproval.tsx
 │   │   │   ├── RequestRejected.tsx
 │   │   │   └── RestaurantWizard.tsx
